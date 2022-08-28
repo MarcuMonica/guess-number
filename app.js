@@ -71,15 +71,11 @@ function CheckNumber() {
         hintMessageElement.innerText = `Your number is too high`;
         }
         updateLives(lives - 1);
-
     }
-    console.log(gameWon)
 
     if (lives === 0) {
         hintMessageElement.innerText = `Oh no, you ran out of lives! :( `
     }
-    console.log(myNumber)
-
 }
 
 newGameElement.addEventListener('click', function () {
