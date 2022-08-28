@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GuessNumber</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="container-fluid">
+      <header class="row mb-3 mb-lg-5">
+        <div class="col-4 col-lg-4 text-center">
+          <button type="reset" id="new-game">New Game</button>
+        </div>
+
+        <div class="score col-8 col-lg-4">
+          <p class="highscore">
+            <i class="fa-solid fa-trophy d-none d-lg-block"></i>Highscore :
+            <span class="highscore-value" id="highscore-value">0</span>
+          </p>
+          <p>Score : <span class="score-value" id="score-value">0</span></p>
+        </div>
+
+        <div class="lives col-12 col-lg-4">
+          <p class="text-center">Lives :</p>
+
+          <ul id="lives">
+            <li><i class="fa-solid fa-heart"></i></li>
+          </ul>
+        </div>
+      </header>
+
+      <main class="mb-lg-5">
+        <h1 class="d-none d-lg-block">Guess the number!</h1>
+
+        <div class="row flex-column-reverse flex-lg-row">
+          <div class="col-12 col-lg-6">
+            <div class="your-number mb-5 d-flex justify-content-center align-items-center gap-5">
+              <input type="text" placeholder="Insert your number" id="guess-input"/>
+              <button type="submit" id="check-button">Check!</button>
+            </div>
+
+            <div class="hint">
+              <p>Hints :</p>
+              <p id="hint-message">Start the game by inserting first number</p>
+            </div>
+          </div>
+
+          <div class="random-number mb-5 mb-lg-none col-12 col-lg-6">
+            <p class="unknown-number mb-2" id="random-number">?</p>
+            <p class="text-center">Between 1 and <span id="max-number">100</span></p>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        Photo by
+        <a
+          href="https://unsplash.com/@kierinsight?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          >Kier In Sight</a
+        >
+        on
+        <a
+          href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+          >Unsplash</a
+        >
+      </footer>
+    </section>
+
+    <script
+      src="https://kit.fontawesome.com/b91f1050a2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

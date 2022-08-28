@@ -1,0 +1,200 @@
+@import "../node_modules/bootstrap/scss/bootstrap-reboot.scss";
+@import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
+@import "../node_modules/bootstrap/scss/bootstrap-grid.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  background-color: #000;
+
+  @include media-breakpoint-up("lg") {
+    height: 100%;
+  }
+}
+
+body {
+  color: white;
+  background-image: url(./images/PhotoByKierInsightonunsplashed.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Rubik Distressed", cursive;
+}
+
+section {
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+  font-size: 20px;
+
+  @include media-breakpoint-up("lg") {
+    padding-top: 50px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    button {
+      font-size: 30px;
+      line-height: 32px;
+      height: 130px;
+      width: 130px;
+      border-radius: 50%;
+      background-color: #fff;
+      color: #000;
+      margin-bottom: 10px;
+      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+        rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+        rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+        rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+        rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+        rgba(0, 0, 0, 0.09) 0px 32px 16px,
+        rgba(255, 255, 255, 0.3) 0px 0px 30px 20px;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+          background-color: #660000;
+          color: #fff;
+        }
+
+      @include media-breakpoint-up("lg") {
+        font-size: 34px;
+        height: 150px;
+        width: 150px;
+      }
+    }
+
+    .score {
+      text-align: center;
+
+      .highscore {
+        font-size: 26px;
+
+        i {
+          font-size: 44px;
+          padding-right: 10px;
+          background: -webkit-linear-gradient(#eeeeeed9, #d9a40f);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+
+    .lives {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        gap: 6px;
+
+        li {
+          height: 30px;
+          width: 30px;
+          text-align: center;
+          color: #ab2424;
+
+          i {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    h1 {
+      text-align: center;
+      font-size: 60px;
+      margin-bottom: 50px;
+
+      @include media-breakpoint-up("md") {
+        margin-bottom: 150px;
+      }
+    }
+
+    .your-number {
+      input {
+        text-align: center;
+        color: #fff;
+        box-shadow: inset 0 0 20px #402727, 0 0 16px #fff;
+        background: transparent;
+        outline: none;
+        max-width: 220px;
+        transition: background-color 0.2s ease-in-out;
+
+        &:focus {
+          background-color: #111;
+        }
+
+        &::placeholder {
+          color: rgb(143, 27, 27);
+          font-size: 18px;
+          text-align: center;
+        }
+      }
+
+      button {
+        background: transparent;
+        padding: 2px 10px;
+        border: 1px solid #d3d3d385;
+        color: #fff;
+        transition: background-color 0.2s linear;
+
+        &:hover {
+          background-color: #111;
+        }
+      }
+    }
+
+    .hint {
+      text-align: center;
+
+      ul {
+        padding: 0;
+
+        li {
+          list-style-type: none;
+        }
+      }
+    }
+
+    .unknown-number {
+      font-size: 30px;
+      box-shadow: 0px 0px 40px #fff;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 60px;
+      margin: auto;
+    }
+  }
+
+  footer {
+    text-align: center;
+    text-decoration: none;
+    opacity: 0.3;
+    font-size: 14px;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+}

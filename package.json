@@ -1,0 +1,16 @@
+{
+  "name": "NumberGuessing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "sass -w sass/index.scss style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "sass": "^1.54.5"
+  }
+}
