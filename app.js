@@ -10,7 +10,7 @@ const maxNumberElement = document.querySelector('#max-number');
 
 let maxNumber = 10;
 let randomNumber;
-let highscore = 0;
+let highscore = window.localStorage.getItem('highscore');
 let score = 0;
 let lives = 5;
 let gameWon = false;
@@ -18,6 +18,7 @@ let gameWon = false;
 updateLives(lives);
 generateRandomNumber();
 updateMaxNumber(10);
+updateHighscore(highscore);
 
 checkButtonElement.addEventListener('click', CheckNumber);
 guessInputElement.addEventListener('keyup', function (event) {
@@ -52,23 +53,23 @@ function CheckNumber() {
     }
 
     else if (myNumber < randomNumber) {
-        if(randomNumber - myNumber > 20) {
+        if (randomNumber - myNumber > 20) {
             hintMessageElement.innerText = 'Your number is WAY too small'
         } else if (randomNumber - myNumber < 5) {
             hintMessageElement.innerText = 'Your number is too small but you are getting close'
         } else {
-            hintMessageElement.innerText = `Your number is too small`;            
+            hintMessageElement.innerText = `Your number is too small`;
         }
         updateLives(lives - 1);
 
 
     } else if (myNumber > randomNumber) {
-        if(myNumber - randomNumber > 20) {
+        if (myNumber - randomNumber > 20) {
             hintMessageElement.innerText = 'Your number is WAY too high'
         } else if (myNumber - randomNumber < 5) {
             hintMessageElement.innerText = 'Your number is too high but you are getting close'
         } else {
-        hintMessageElement.innerText = `Your number is too high`;
+            hintMessageElement.innerText = `Your number is too high`;
         }
         updateLives(lives - 1);
     }
@@ -85,7 +86,7 @@ newGameElement.addEventListener('click', function () {
 
     gameWon = false;
     hintMessageElement.innerText = 'Start the game by inserting first number';
-    
+
     if (lives === 0) {
         updateScore(0);
         updateMaxNumber(10);
@@ -109,6 +110,8 @@ function updateScore(newScore) {
 function updateHighscore(newHighscore) {
     highscore = newHighscore;
     highscoreValueElement.innerText = highscore;
+
+    window.localStorage.setItem('highscore', highscore)
 }
 
 function updateLives(lifeCount) {
