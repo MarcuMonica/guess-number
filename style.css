@@ -8945,4 +8945,19 @@ section footer a {
   color: #fff;
 }
 
+.random-number span {
+  transform: scale(1);
+  transition: color 0.2s linear, transform 0.2s linear;
+  display: inline-block;
+}
+.random-number span.max-number-difficulty {
+  transform: scale(3);
+  color: #000;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  box-shadow: 0px 0px 10px 2px #fff;
+}
+
 /*# sourceMappingURL=style.css.map */

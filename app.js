@@ -10,7 +10,7 @@ const maxNumberElement = document.querySelector('#max-number');
 
 let maxNumber = 10;
 let randomNumber;
-let highscore = window.localStorage.getItem('highscore');
+let highscore = window.localStorage.getItem('highscore') // || 0;
 let score = 0;
 let lives = 5;
 let gameWon = false;
@@ -109,7 +109,13 @@ function updateScore(newScore) {
 
 function updateHighscore(newHighscore) {
     highscore = newHighscore;
+
+    if(highscore === null) {
+       highscore = 0;
+    }
+
     highscoreValueElement.innerText = highscore;
+
 
     window.localStorage.setItem('highscore', highscore)
 }
@@ -149,4 +155,8 @@ function generateRandomNumber() {
 function updateMaxNumber(newMaxNumber) {
     maxNumber = newMaxNumber;
     maxNumberElement.innerText = newMaxNumber;
+    maxNumberElement.classList.add('max-number-difficulty');
+    setTimeout(function() {
+        maxNumberElement.classList.remove('max-number-difficulty')
+    }, 400)
 }
