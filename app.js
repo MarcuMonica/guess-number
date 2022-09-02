@@ -158,5 +158,5 @@ function updateMaxNumber(newMaxNumber) {
     maxNumberElement.classList.add('max-number-difficulty');
     setTimeout(function() {
         maxNumberElement.classList.remove('max-number-difficulty')
-    }, 400)
+    }, 600)
 }
