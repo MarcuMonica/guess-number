@@ -31,8 +31,14 @@ function CheckNumber() {
     const myNumber = Number(guessInputElement.value);
     guessInputElement.value = '';
 
-    if (gameWon === true) {
-        hintMessageElement.innerText = 'Press New Game to continue'
+    if (gameWon === true) {        
+        hintMessageElement.innerText = 'You won! Press New Game to continue'
+
+        return;
+    }
+
+    if (lives === 0) {        
+        hintMessageElement.innerText = 'You are out of lives! Press New Game to continue'
 
         return;
     }
@@ -158,5 +164,5 @@ function updateMaxNumber(newMaxNumber) {
     maxNumberElement.classList.add('max-number-difficulty');
     setTimeout(function() {
         maxNumberElement.classList.remove('max-number-difficulty')
-    }, 600)
+    }, 500)
 }
